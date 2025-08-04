@@ -1,0 +1,384 @@
+
+/* gobal/pc layout */
+
+/************************************
+* general layout
+************************************/
+
+/* others / general */
+@font-face {
+  font-family: 'OPTITimes-Roman';
+  src: url('fonts/OPTITimes-Roman.otf') format('otf'),
+       url('fonts/OPTITimesRoman-Italic.otf') format('otf');
+}
+/* font from this website: https://www.downloadfonts.io/times-roman-font/ */
+
+* {margin: 0; font-family: 'OPTITimes-Roman'; font-size: 1.1rem;}
+
+body {
+    font-family: Arial;
+    color: rgb(206, 226, 255);
+    background-color: #2f3d58;
+}
+
+.Grid {
+    display: grid;
+}
+
+.Flex {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: left;
+}
+
+.BodyGridContainer {
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 1.75fr 6.5fr 1.75fr;
+    min-height: 100dvh;
+}
+.BodyGridItem1 {grid-area: 1/1/2/4;}
+.BodyGridItem2 {grid-area: 2/1/3/2;}
+.BodyGridItem3 {grid-area: 2/1/3/2;}
+.BodyGridItem4 {grid-area: 2/2/3/3;}
+.BodyGridItem5 {grid-area: 3/1/4/4;}
+
+header, footer {
+    background-color: #131A2B;
+}
+
+h1 {
+    font-size: 2.25em;
+    text-align: left;
+    margin: 1rem auto;
+    color: rgb(255, 239, 146);
+}
+h2 {
+    font-size: 1.75em;
+    text-align: center;
+    margin: 1rem auto;
+    color: rgb(255, 253, 206);
+}
+
+a {text-decoration: none;}
+div.SpaceMaker {margin-bottom: 20px;}
+div.SpaceMaker2 {margin-bottom: 70px;}
+div.SpaceMakerGameContainerEdition {margin-bottom: 400px;}
+div.Center {text-align: center;}
+img.ImgCenter {position: relative; left: 50%; transform: translate(-50%, 0);}
+span.Large {font-size: 1.2em;}
+span.Yellow {color:rgb(255, 253, 206);}
+.BoxShadow {box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);}
+.NoSelect {
+    user-select: none; /* Standard syntax */
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+}
+.Credit {color: #4c5d85; font-size: 0.8em;}
+div.Credit a {color: #4c5d85;}
+div.Credit a:hover {color: #2f3d58;}
+div.Credit a:active {color: #4c5d85;}
+
+/* header */
+header {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100dvw;
+    height: 75px;
+    z-index: 15;
+}
+.HeaderFlexContainer {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: 75px;
+}
+.HeaderFlexItem1 {flex: 0;}
+.HeaderFlexItem2 {flex: 100%;}
+header h1 {
+    margin: calc((75px - 1em) / 2);
+}
+#MenuBtn {
+    display: none;
+}
+
+/* nav */
+nav {background-color: #08081A;}
+nav#NavInterPage, nav#NavInPage {
+    border-right: 2px solid #4c5d85;
+    border-bottom: none;
+    position: fixed;
+    width: 17.3dvw;
+    height: calc(100dvh - 75px);
+    z-index: 5;
+}
+nav a {color: rgb(206, 226, 255);}
+nav a:hover {color: gold; background-color: #131A2B;}
+nav a:active {color: rgb(206, 226, 255); background-color: #08081A;}
+.NavInterPageFlexContainer, .NavInPageFlexContainer {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: left;
+}
+.FlexItem {flex-basis: 100%;}
+.NavInterPageFlexItem, .NavInPageFlexItem {
+    padding: 2px;
+    padding-left: 50px;
+    padding-right: 35px;
+    font-size: 0.95rem;
+}
+#ArrowNInterP, #ArrowNInP {
+    flex-basis: 100%;
+    margin: 5px;
+    padding-right: 0.45rem;
+    padding-left: 0.45rem;
+    padding-bottom: 0.2rem;
+    margin-left: auto;
+    text-align: right;
+}
+nav p:hover {color: gold; background-color: #1B253D;}
+.AnimatedObject {position: relative; transition: all 0.5s;} /* css translation */
+nav.AnimatedObject#NavInPage {right: 35px;}
+.NInPGridContainer {
+    grid-template-rows: max-content auto;
+    grid-template-columns: inherit;
+    height: 100dvh;
+}
+.NInPGridItem1 {grid-area: 1/1/2/2;}
+.NInPGridItem2 {grid-area: 2/1/3/2;}
+.NInPGridItem3 {grid-area: 2/1/3/2;}
+.NInPGridItem4 {grid-area: 2/1/3/2;}
+.NInPGridItem5 {grid-area: 2/1/3/2;}
+
+/* main */
+main {background-color: #1B253D; padding: 0 10%;}
+#Page1 {display: flex;}
+#Page2 {display: none;}
+#Page3 {display: none;}
+#Page4 {display: none;}
+.MainContent {margin: 0.5rem 0;}
+p {text-align: left;}
+
+/* footer */
+footer {height: calc(100dvh - 75px); z-index: 10;}
+.FooterFlexContainer {
+    flex-direction: row;
+    justify-content:center;
+    flex-wrap: wrap;
+}
+.FooterFlexItem {margin: auto 20px; flex: 0;}
+#FooterText {flex: 150px 0 0;}
+#QRCode {display: block;}
+#FooterCredit {
+    text-align: center;
+    color: #4c5d85;
+    font-size: 0.8rem;
+    margin: 0;
+}
+footer p {width: 200px;}
+footer div p {text-align: center;}
+
+/************************************
+* speccific layout
+************************************/
+
+/* home */
+
+
+
+/* DAW */
+
+#ImgGridContainer {
+    display: grid;
+    grid-template-rows: 75px;
+    grid-template-columns: 1fr 1fr 1fr;
+    min-width: 100%;
+    max-width: 100%;
+    margin: auto;
+    text-align: center;
+}
+.ImgGridItem1 {grid-area: 1/1/2/2;}
+.ImgGridItem2 {grid-area: 1/2/2/3;}
+.ImgGridItem3 {grid-area: 1/3/2/4;}
+#FLIcon {width: 75px; height: 75px; background: url(images/Icon_Sprites.png) 0 0;}
+#AbletonIcon {width: 75px; height: 75px; background: url(images/Icon_Sprites.png) -75px 0;}
+#BitwigIcon {width: 75px; height: 75px; background: url(images/Icon_Sprites.png) -150px 0;}
+#CubaseIcon {width: 75px; height: 75px; background: url(images/Icon_Sprites.png) 0 -75px;}
+#LogicIcon {width: 75px; height: 75px; background: url(images/Icon_Sprites.png) -75px -75px;}
+#PerformerIcon {width: 75px; height: 75px; background: url(images/Icon_Sprites.png) -150px -75px;}
+
+
+/* IM */
+
+audio {width: 50%; height: 45px;}
+#RadioGridContainer {
+    display: grid;
+    grid-template-rows: 2rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    min-width: 100%;
+    max-width: 100%;
+    margin: auto;
+    text-align: center;
+}
+.RadioGridItem1 {grid-area: 1/1/2/2;}
+.RadioGridItem2 {grid-area: 1/2/2/3;}
+.RadioGridItem3 {grid-area: 1/3/2/4;}
+
+
+/* EA */
+
+#AutomationVideo {aspect-ratio: 16/9;}
+
+
+/* GAME */
+
+#GameComboText {text-align: center; font-size: 1.5rem; display: block;}
+#GameComboText2 {display: none;}
+#GameInfoGridContainer {
+    display: grid;
+    grid-template-rows: 2rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    min-width: 200px;
+    max-width: 100%;
+    margin: auto;
+    text-align: center;
+}
+.GameInfoGridItem1 {grid-area: 1/1/2/2;}
+.GameInfoGridItem2 {grid-area: 1/2/2/3;}
+.GameInfoGridItem3 {grid-area: 1/3/2/4;}
+#GameGridContainer {
+    background-color: #08081A;
+    border: rgb(206, 226, 255) double 5px;
+    display: grid;
+    position: absolute;
+    top: 600px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    grid-template-rows: 325px 50px 25px;
+    grid-template-columns: 1fr 1fr;
+    min-height: 400px;
+    max-height: 400px;
+    min-width: 200px;
+    max-width: 200px;
+    /* margin: auto calc((100% - 200px - 5px * 2) / 2); */
+}
+.GameGridItem1 {grid-area: 1/1/2/2; border-right: #4c5d85 double 5px; z-index: 4;}
+.GameGridItem2 {grid-area: 1/2/2/3; border-left: #4c5d85 double 5px; z-index: 4;}
+.GameGridItem3 {grid-area: 2/1/3/2; background-color: #1B253D; border-right: #4c5d85 double 5px; border-top: #8d9fca solid 2.5px; z-index: 4;}
+.GameGridItem4 {grid-area: 2/2/3/3; background-color: #1B253D; border-left: #4c5d85 double 5px; border-top:#8d9fca solid 2.5px; z-index: 4;}
+.GameGridItem5 {grid-area: 3/1/4/2; background-color: #08081A; border-right: #4c5d85 double 5px; z-index: 4;}
+.GameGridItem6 {grid-area: 3/2/4/3; background-color: #08081A; border-left: #4c5d85 double 5px; z-index: 4;}
+@keyframes GameHitEffectH { /* css animation */
+    0% {background-color: #2f3d58; border-top-color: rgb(206, 226, 255);}
+    100% {background-color: #1B253D; border-top-color: #8d9fca;}
+}
+.GameHitAnimH {animation: GameHitEffectH 0.1s;}
+#GameButtonGridContainer {
+    display: grid;
+    grid-template-rows: 1fr 2fr 1fr;
+    grid-template-columns: 1fr auto 1fr auto 1fr;
+    min-height: 50px;
+    max-height: 50px;
+    min-width: 200px;
+    max-width: 200px;
+    margin: auto calc((100% - 200px) / 2);
+}
+.GameButtonGridItem1 {grid-area: 2/2/3/3;}
+.GameButtonGridItem2 {grid-area: 2/4/3/5;}
+button {color:rgb(206, 226, 255); background: #4c5d85; border: #08081A groove 3px; border-radius: 5px;}
+button:hover {color:gold; background: #08081A; border: #4c5d85 ridge 3px;}
+button:active {color:rgb(206, 226, 255); background: #4c5d85; border: #08081A groove 3px; border-radius: 5px;}
+#MobileTouchZ {display: none;}
+#MobileTouchX {display: none;}
+
+
+@media (max-width: 800px) {/* phone layout */
+
+    /************************************
+    * general layout
+    ************************************/
+
+    .BodyGridContainer {
+        grid-template-columns: 0.75fr 8.5fr 0.75fr;
+    }
+
+    /* header */
+    header h1 {
+        font-size: 1.5rem;
+        height: fit-content;
+        margin: calc((75px - 1em) / 2);
+    }
+    #MenuBtn {
+        display: block;
+        margin: 5px;
+        padding: 0.2em 0.5em;
+        color: rgb(206, 226, 255);
+        background-color: #131A2B;
+    }
+    #MenuBtn span {font-size: 2.5em;}
+    #MenuBtn:active {color: gold; background-color: #1B253D;}
+
+    /* nav */
+    nav#NavInterPage, nav#NavInPage {
+        border-right: none;
+        border-bottom: 2px solid #4c5d85;
+        width: 100dvw;
+        height: calc(100vh - 75px);
+        left: 0;
+        z-index: 11;
+    }
+    nav#NavInPage {
+        z-index: 12;
+    }
+
+    /* footer */
+    #FooterText {
+        width: 150px;
+        padding: 0 calc(100%/2 - 75px);
+        text-align: center;
+    }
+    #QRCode {display: none;}
+
+    /************************************
+    * speccific layout
+    ************************************/
+
+    /* home */
+
+    /* DAW */
+
+    /* IM */
+
+    audio {width: 100%; height: 45px;}
+    #RadioGridContainer {
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: 100%;
+    }
+    .RadioGridItem1 {grid-area: 1/1/2/2; height: 1.5rem;}
+    .RadioGridItem2 {grid-area: 2/1/3/2; height: 1.5rem;}
+    .RadioGridItem3 {grid-area: 3/1/4/2; height: 1.5rem;}
+
+    /* EG */
+
+    /* GAME */
+
+    #GameComboText {display: none;}
+    #GameComboText2 {text-align: center; font-size: 1.5rem; display: block;}
+    #GameInfoGridContainer {
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: 100%;
+    }
+    .GameInfoGridItem1 {grid-area: 3/1/4/2; height: 1.5rem;}
+    .GameInfoGridItem2 {grid-area: 1/1/2/2; height: 1.5rem;}
+    .GameInfoGridItem3 {grid-area: 2/1/3/2; height: 1.5rem;}
+    #MobileTouchZ {display: block; font-size: 2rem; text-align: center; border: none; background-color: #08081a0a; color: #8d9fca80; z-index: 9;}
+    #MobileTouchX {display: block; font-size: 2rem; text-align: center; border: none; background-color: #08081a0a; color: #8d9fca80; z-index: 9;}
+
+}
+
+@media (max-width: 410px) {/* phone layout extra */
+    header h1 {
+        margin: calc((75px - 2.25em) / 2) calc((75px - 1em) / 2);
+    }
+}
