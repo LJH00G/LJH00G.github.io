@@ -79,7 +79,7 @@ const musCastleFunkOffset = new Audio("audio/mus_Castle_Funk_OST.ogg");
 const sfxLHit = new Audio("audio/sfx_Left_Hit.mp3");
 const sfxRHit = new Audio("audio/sfx_Right_Hit.mp3");
 musCastleFunk.volume = 0.5;
-musCastleFunkOffset.volume = 0;
+musCastleFunkOffset.muted = true;
 sfxLHit.volume = 0.3;
 sfxRHit.volume = 0.3;
 let BPM = 125; /* variable */
@@ -1201,5 +1201,6 @@ function Update() {
     requestAnimationFrame(Update);
     
 }
+
 
 Update();
