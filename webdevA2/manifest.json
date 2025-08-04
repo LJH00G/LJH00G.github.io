@@ -1,0 +1,15 @@
+{
+    "name": "WebDev A2 Digital Music Composition",
+    "short_name": "DMC",
+    "start_url": "index.html",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#00FF00",
+    "icons": [
+        {
+            "src": "images/DMC_Web_App_Icon.png",
+            "sizes": "80x80",
+            "type": "image/png"
+        }
+    ]
+}
